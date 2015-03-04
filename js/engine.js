@@ -114,6 +114,14 @@ var Engine = (function(global) {
     function checkIfGameshouldEnd(){
         if(BonuScore == 31 || EndTheGame == true){
             /* remove all items on screen */
+
+            sound.stopAll();
+            if(BonuScore < 10){
+                sound.playerDie();
+            }else{
+                sound.gameOver();
+            }
+
             allEnemies = [];
             gameStarted = false ;
             bonusItems = [] ;

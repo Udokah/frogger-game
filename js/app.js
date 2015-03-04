@@ -17,10 +17,20 @@ var EndTheGame = false ;
 var Sound = function(){
     var dir = 'sounds/' ;
 
-    var jumpSound = new Audio(dir + 'jump.wav');
+    var jumpSound = new Audio(dir + 'kick.wav');
     var hurtSound = new Audio(dir + 'hurt.wav');
     var dieSound = new Audio(dir + 'die.wav');
     var coinSound = new Audio(dir + 'coins.wav');
+    var playerDieS = new Audio(dir + 'player-die.wav');
+    var overSound = new Audio(dir + 'game-over.wav');
+
+    this.gameOver = function(){
+        overSound.play();
+    };
+
+    this.playerDie = function(){
+        playerDieS.play();
+    };
 
     this.stopAll = function(){
         jumpSound.pause();
