@@ -23,6 +23,11 @@ var Sound = function(){
     var coinSound = new Audio(dir + 'coins.wav');
     var playerDieS = new Audio(dir + 'player-die.wav');
     var overSound = new Audio(dir + 'game-over.wav');
+    var changeSound = new Audio(dir + 'change.wav');
+
+    this.change = function(){
+        changeSound.play();
+    };
 
     this.gameOver = function(){
         overSound.play();
@@ -207,6 +212,7 @@ document.addEventListener('keyup', function(e) {
         if(max >= 3){
             max = 0 ;
         }
+        sound.change();
         player.sprite = player.players[max];
     }
 
